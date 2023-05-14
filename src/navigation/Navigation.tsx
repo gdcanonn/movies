@@ -1,8 +1,14 @@
 import { createStackNavigator } from '@react-navigation/stack'
+import { Movie } from '../interfaces/movieInterface'
 import { DetailScreen } from '../screens/DetailScreen'
 import { HomeScreen } from '../screens/HomeScreen'
 
-const Stack = createStackNavigator()
+export type RootStackParams = {
+  HomeScreen: undefined
+  DetailScreen: Movie
+}
+
+const Stack = createStackNavigator<RootStackParams>()
 
 export const Navigation = () => {
   return (
@@ -10,7 +16,7 @@ export const Navigation = () => {
       screenOptions={{
         headerShown: false,
         cardStyle: {
-          backgroundColor: 'white'
+          // backgroundColor: 'white'
         }
       }}
     >
